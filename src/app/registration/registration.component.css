@@ -1,0 +1,17 @@
+.example-card {
+  /*width: 50vw;*/
+  width: 500px;
+  margin-left: -250px;
+  margin-top: -200px;
+  top:50vh;
+  left: 50vw;
+}
+
+.example-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-form > * {
+  width: 100%;
+}

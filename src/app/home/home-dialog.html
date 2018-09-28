@@ -1,0 +1,13 @@
+<div class="dialog-content">
+  <h1 mat-dialog-title>New note</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.newNoteName">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.newNoteName" cdkFocusInitial>Ok</button>
+  </div>
+
+</div>

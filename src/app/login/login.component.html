@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+
+  <mat-card-header>
+    <mat-card-title>Sign in</mat-card-title>
+
+    <mat-card-title>
+      <mat-error *ngIf="loginError">
+        <strong>{{loginError}}</strong>
+      </mat-error>
+    </mat-card-title>
+
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="User name" [formControl]="usernameFormControl">
+        <mat-error *ngIf="usernameFormControl.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input type="password" matInput placeholder="Password" [formControl]="passwordFormControl">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button (click)="signIn()" color="primary" [disabled]="formControlsHasErrors()">Sign in</button>
+    </form>
+
+    <p>No account? <a [routerLink]="['/signup']">Create one!</a></p>
+
+  </mat-card-content>
+  <mat-card-actions>
+
+    <!--<button mat-raised-button (click)="signIn()" color="primary" [disabled]="formControlsHasErrors()">Sign in</button>-->
+  </mat-card-actions>
+</mat-card>
